@@ -50,29 +50,9 @@ public class RequestController {
 	@RequestMapping(value = "/person", method = RequestMethod.GET)
 	public String personList(Model model) {
 		log.debug("personList()");
-//	    model.addAttribute("books", service.getAllBooksForPerson(id));
 		model.addAttribute("selection", "person");
-		
 		Iterable<Person> list =  service.getAllPersons();
-		
-		
 		model.addAttribute("list", list);
-        
-        list.forEach(new Consumer<Person>() {
-
-			@Override
-			public void accept(Person p) {
-				log.debug("----------------");
-				log.debug("ID: " + p.getId());
-				log.debug("Name: " + p.getName());
-				log.debug("Email: " + p.getEmail());
-				log.debug(">>>Books: ");
-				for(Book b : p.getBooks()) {
-					log.debug(">>> " + b.toString());
-				}
-				log.debug("----------------");
-			}
-		});
 	    return "person";
 	}
 	

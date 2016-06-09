@@ -1,5 +1,6 @@
-insert into person (id,name,phone,email) values (1,'Hiten Ravani','1234', 'h@h.com');
-insert into person (id,name,phone,email) values (2,'Joe Blogs','1234', 'j@b.com');
+insert into person (id,name,phone,email) values (1,'Hiten Ravani','1234', 'hiten@ravani.com');
+insert into person (id,name,phone,email) values (2,'Joe Blogs','9999', 'joe@blogs.com');
+insert into person (id,name,phone,email) values (3,'No Books','0000', 'no@books.com');
 
 
 

@@ -44,7 +44,6 @@
 					<td th:text="${person.name}">Name</td>
 					<td th:text="${person.phone}">Phone</td>
 					<td th:text="${person.email}">Email</td>
-					<td th:text="${#lists.size(person.books)}">50</td>
 					<td>
 					<button name="viewButton" th:attr="data-row-id=${person.id}" type="button" 
                     class="btn btn-primary"><i class="fa fa-eye"></i></button></td>
