@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+</head>
+
+<body>
+	<div th:fragment="resultsList" id="results-block">
+		<div th:unless="${#lists.isEmpty(person.books)}">
+			<div class="row">
+				<div class="col-xs-12">
+					<p th:text="|List of books lend to ${person.name}|"></p>
+					<div class="table-responsive" style="background: #fff;">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>Title</th>
+									<th>Author</th>
+									<th>ISBN</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="book : ${person.books}">
+									<td th:text="${book.id}">id</td>
+									<td th:text="${book.title}">title</td>
+									<td th:text="${book.author}">author</td>
+									<td th:text="${book.isbn}">isbn</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div th:if="${#lists.isEmpty(person.books)}">
+				<p th:text="|${person.name} has not lend any books|"></p>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

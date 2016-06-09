@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>National Library Archives: Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Important for responsive on mobile devices -->
+    <meta name="description" content="" />
+    <meta name="author" content="" /> 
+    
+    <!-- bootstrap/font awesome cdn -->
+   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+   
+    
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">National Library Archives</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li th:class="${selection} == 'welcome' ? 'active' : ''" class="active"><a href="/">Home</a></li>
+      <li th:class="${selection} == 'person' ? 'active' : ''"><a href="/person">Person</a></li>
+      <li th:class="${selection} == 'book' ? 'active' : ''"><a href="/books">Books</a></li> 
+    </ul>
+  </div>
+</nav>
+
+	<div class="container">
+		<div class="page-header">
+  			<h1>Books List</h1>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>ISBN</th>
+					<th>Lend User</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="book : ${books}">
+					<td th:text="${book.title}">Title</td>
+					<td th:text="${book.author}">Author</td>
+					<td th:text="${book.isbn}">ISBN</td>
+					<td th:text="${book.person.name}">Test User</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- loading javascript at the end of page makes page load quicker -->
+    <!-- jquery and bootsrap js files -->
+    <script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+			
+	<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+			
+	<!--  Keep the application javascript last as much as possible -->	
+	<script type="text/javascript" src="../js/main.js"
+			th:src="@{/js/application.js}"></script>			
+			
+</body>
+</html>
