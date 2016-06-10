@@ -16,3 +16,6 @@ command: mvn test
 4) Run the application
 command: mvn spring-boot:run
 
+5) View the application
+http://localhost:8080
+
