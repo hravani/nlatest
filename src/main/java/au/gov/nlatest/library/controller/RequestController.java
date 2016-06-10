@@ -54,10 +54,10 @@ public class RequestController {
 	    return "books";
 	}
 	
-	@RequestMapping(value = "/person", method = RequestMethod.GET)
+	@RequestMapping(value = "/people", method = RequestMethod.GET)
 	public String personList(Model model) {
 		log.debug("personList()");
-		model.addAttribute("selection", "person");
+		model.addAttribute("selection", "people");
 		Iterable<Person> list =  service.getAllPersons();
 		model.addAttribute("list", list);
 	    return "person";

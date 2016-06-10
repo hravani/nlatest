@@ -9,7 +9,7 @@
 	<div th:fragment="resultsList" id="results-block">
 		<div class="row">
 			<div class="col-xs-12">
-				<p th:text="|List of books lend to ${person.name}|"></p>
+				<p th:text="|List of books lent to ${person.name}|"></p>
 				<div th:unless="${#lists.isEmpty(person.books)}">
 					<div class="table-responsive" style="background: #fff;">
 						<table class="table table-hover">
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 				<div th:if="${#lists.isEmpty(person.books)}">
-					<p th:text="|No books lend!|"></p>
+					<p th:text="|No books lent!|"></p>
 				</div>
 			</div>
 		</div>
