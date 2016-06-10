@@ -1,7 +1,7 @@
 # nlatest
 National Library Test
 
-Sample project to demonstrate use of Spring-Boot, JQuery and Ajax request.
+Sample project to demonstrate use of Spring MVC, JQuery and Ajax request.
 
 Steps to get started.
 
