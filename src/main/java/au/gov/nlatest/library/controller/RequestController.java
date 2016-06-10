@@ -1,7 +1,5 @@
 package au.gov.nlatest.library.controller;
 
-import java.util.function.Consumer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +11,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import au.gov.nlatest.library.controller.service.LibraryService;
-import au.gov.nlatest.library.jpa.entities.Book;
 import au.gov.nlatest.library.jpa.entities.Person;
 
+/**
+ * Controller class to handle mvc request
+ * 
+ * @author hiten
+ *
+ */
 @Controller
 public class RequestController {
 	private static final Logger log = LoggerFactory.getLogger(RequestController.class);
 	
 	@Autowired
 	private LibraryService service;
+	
+	/*
+	 * Handle various request mappings
+	 */
 	
 	@RequestMapping("/")
     public String welcome(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {

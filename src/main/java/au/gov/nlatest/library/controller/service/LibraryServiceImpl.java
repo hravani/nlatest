@@ -1,7 +1,5 @@
 package au.gov.nlatest.library.controller.service;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +11,13 @@ import au.gov.nlatest.library.jpa.LibraryRepository;
 import au.gov.nlatest.library.jpa.entities.Book;
 import au.gov.nlatest.library.jpa.entities.Person;
 
+/**
+ * Business service class used to access the Data Layer and perform
+ * any business logic
+ * 
+ * @author hiten
+ *
+ */
 @Service
 @Transactional
 public class LibraryServiceImpl implements LibraryService {
@@ -23,13 +28,6 @@ public class LibraryServiceImpl implements LibraryService {
 	private LibraryRepository daoService;
 
 	// Business service methods.
-	
-	@Override
-	@Transactional(propagation = Propagation.REQUIRED)
-	public void addBook(Book book) {
-		log.debug("Adding new book");
-	}
-
 	@Override
 	@Transactional(propagation = Propagation.SUPPORTS)
 	public Iterable<Person> getAllPersons() {

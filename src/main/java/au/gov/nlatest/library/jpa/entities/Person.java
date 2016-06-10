@@ -12,6 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+/**
+ * JPA entity Person
+ * @author hiten
+ * 
+ */
 @Entity(name="person")
 public class Person {
 	@Id
@@ -30,6 +35,10 @@ public class Person {
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "person")
 	private List<Book> books = new ArrayList<>();
 	
+	
+	/*
+	 * accessors and mutators
+	 */
 	public long getId() {
 		return id;
 	}

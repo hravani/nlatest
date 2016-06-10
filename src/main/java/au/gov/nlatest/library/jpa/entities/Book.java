@@ -8,6 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+/**
+ * JPA Entity Book
+ * 
+ * @author hiten
+ * 
+ */
 @Entity (name = "book")
 public class Book {
 	@Id
@@ -36,12 +42,11 @@ public class Book {
         this.isbn = isbn;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Book[id=%d, title='%s', auther='%s', isbn='%s']",
-                id, title, author, isbn);
-    }
+  
+    
+    /*
+     * accessors and mutators
+     */
 
 	public long getId() {
 		return id;
@@ -83,7 +88,10 @@ public class Book {
 		this.person = person;
 	}
     
-    
-
+	@Override
+	public String toString() {
+		return String.format("Book[id=%d, title='%s', auther='%s', isbn='%s']",
+				id, title, author, isbn);
+	}
 
 }

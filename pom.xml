@@ -38,12 +38,21 @@
 			<optional>true</optional>
 		</dependency>
 		
+		<!-- testing dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
 		
 		<!-- Third party -->
 		 <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
+        
+		 
 	</dependencies>
 
 	<build>
